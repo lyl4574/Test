@@ -1,4 +1,4 @@
-
+//循环使得jvm无暇 缓存同步主存
 public class VolatileTest {
     private static volatile int MY_INT = 0;
 
