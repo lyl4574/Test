@@ -9,6 +9,5 @@ public class FunctionTest {
     public static void main(String[] args) {
         int a=10;
         modifyTheValue(10,x->x+10);
-
     }
 }

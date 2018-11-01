@@ -11,7 +11,7 @@ public class LinkedBlockingQueueTest extends Thread {
 	while(true){
 		Object o = waitingEvents.take();
 		System.out.println(o.toString());
-		Thread.sleep(1000);
+		Thread.sleep(100);
 	}
 	
 	}
