@@ -7,6 +7,16 @@
 而用synchronized的关键是建立一个monitor，这个monitor可以是要修改的variable也可以其他你认为合适的object比如method，
 然后通过给这个monitor加锁来实现线程安全，每个线程在获得这个锁之后，要执行完 load到workingmemory －> use&assign －> store到mainmemory 的过程，
 才会释放它得到的锁。这样就实现了所谓的线程安全。
+
+例如：vector线程安全 ArrayList非线程安全，但却节约系统性能
+
+比如一个 ArrayList 类，在添加一个元素的时候，它可能会有两步来完成：1. 在 Items[Size] 的位置存放此元素；2. 增大 Size 的值。
+
+在单线程运行的情况下，如果 Size = 0，添加一个元素后，此元素在位置 0，而且 Size=1；
+而如果是在多线程情况下，比如有两个线程，线程 A 先将元素存放在位置 0。但是此时 CPU 调度线程A暂停，线程 B 得到运行的机会。线程B也向此 ArrayList 添加元素，因为此时 Size 仍然等于 0 （注意哦，我们假设的是添加一个元素是要两个步骤哦，而线程A仅仅完成了步骤1），所以线程B也将元素存放在位置0。然后线程A和线程B都继续运行，都增加 Size 的值。
+那好，现在我们来看看 ArrayList 的情况，元素实际上只有一个，存放在位置 0，而 Size 却等于 2。这就是“线程不安全”了，呵呵。
+
+vector 添加元素方法有synchronized修饰
 */
 /*
     volatile 修饰的变量，只能有一个线程修改，多线程读，否则不适用。一改多读。
