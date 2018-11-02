@@ -11,15 +11,13 @@ public class Client {
       pool = Executors.newFixedThreadPool(poolSize);
     }
     public static void main(String[] args) {
-		Client c = new Client(1);
-		long btime = System.currentTimeMillis();
-		for(int i=0;i<10000;i++){
+		Client c = new Client(8);
+		for(int i=0;i<100;i++){
 			c.pool.submit(new Task(i));
 		}
 		c.pool.shutdown();
 		if(c.pool.isShutdown()){
-			System.out.println(23);
+			System.out.println("end");
 		}
-		System.out.println(System.currentTimeMillis()-btime);
 	}
 }
