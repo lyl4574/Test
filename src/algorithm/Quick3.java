@@ -29,7 +29,12 @@ public class Quick3 extends SpendTime{
 			}
 		}while(i!=j);
 		a[i]=pri;
+		Util.printArray(a);
 		quickSort(a,begin,i-1);
 		quickSort(a,i+1,end);
+	}
+	public static void main(String[] args) {
+		int [] a={12,1212,2,54,65,745,45,4,999,122,1};
+		new Quick3().handle(a);
 	}
 }

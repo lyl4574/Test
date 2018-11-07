@@ -4,7 +4,7 @@ package algorithm;
 。即：每当两相邻的数比较后发现它们的排序与排序要求相反时，就将它们互换。*/
 
 /*如果一次循环无交换，退出（高效）flag*/
-//最坏情况 最大数在最后
+//最坏情况 最小数在最后
 //int [] a={12,1,2,54,65,745,45,4,999,12,1212}; 
 
 //数组长度越大，冒泡算法是最差的
@@ -23,9 +23,16 @@ public class Bubble extends SpendTime{
 					 flag = false;
 				}
 			}
+			Util.printArray(a);
 			if(flag){
 				break;
 			}
 		}
+	}
+
+	public static void main(String[] args) {
+		int [] a={12,1212,2,54,65,745,45,4,999,122,1};
+		new Bubble().handle(a);
+
 	}
 }

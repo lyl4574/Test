@@ -15,6 +15,11 @@ public class Choose extends SpendTime{
 				}
 			}
 			Util.swap(a, i, min);
+			Util.printArray(a);
 		}
+	}
+	public static void main(String[] args) {
+		int [] a={12,1212,2,54,65,745,45,4,999,122,1};
+		new Choose().handle(a);
 	}
 }

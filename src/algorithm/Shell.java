@@ -1,14 +1,11 @@
 package algorithm;
 
 public class Shell extends SpendTime{
+
 	@Override
 	void handle(int[] a) {
-		int n= a.length,flag =1,step=1,i=1;
-		while((int)Math.pow(2, i+2)*((int)Math.pow(2, i+2)-3) +1<n){
-			step=(int)Math.pow(2, i+2)*((int)Math.pow(2, i+2)-3) +1;
-			i++;
-		}
-		i--;
+		int n= a.length;
+		int step=n/2;
 		for(;step>=1;){
 			for(int j=0;j<step;j++){
 				for(int k=j+step;k<n;k+=step){
@@ -22,14 +19,7 @@ public class Shell extends SpendTime{
 					}
 				}
 			}
-			if(flag==1){
-				step=9*((int)Math.pow(4,i))-9*((int)Math.pow(2,i))+1;
-				i--;
-				flag=0;
-			}else{
-				step=(int)Math.pow(2, i+2)*((int)Math.pow(2, i+2)-3) +1;
-				flag=1;
-			}
+			step=step/2;
 		}
 	}
 }
