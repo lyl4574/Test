@@ -1,8 +1,8 @@
-package algorithm;
+package algorithm.order;
 //主元放在首位 不知道为什么查询效率很低,
 //莫名其妙就好了
 
-public class Quick2 extends SpendTime{
+public class Quick2 extends SpendTime {
 	
 	@Override
 	void handle(int[] a) {

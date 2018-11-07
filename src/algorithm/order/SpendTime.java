@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.order;
 
 public abstract class SpendTime {
  public void exe(int[] a){

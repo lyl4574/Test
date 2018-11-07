@@ -1,6 +1,6 @@
-package algorithm;
+package algorithm.order;
 
-public class Shell extends SpendTime{
+public class Shell extends SpendTime {
 
 	@Override
 	void handle(int[] a) {

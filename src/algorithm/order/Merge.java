@@ -1,8 +1,9 @@
-package algorithm;
+package algorithm.order;
+
 //先将数组不断细分成最小的单位，然后每个单位分别排序，排序完毕后合并，
 //重复以上过程最后就可以得到排序结果。
 //随着数组增大，归并算法 比快速排序慢，原因，虽归并算法中排序 比较次数少，但合并操作复杂，浪费时间多。
-public class Merge extends SpendTime{
+public class Merge extends SpendTime {
 
 	@Override
 	void handle(int[] a) {

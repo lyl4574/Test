@@ -1,9 +1,10 @@
-package algorithm;
+package algorithm.order;
+
 //快速排序是基于分治思想的，把问题的规模递归的变小，然后依次解决子问题，自后得到原问题的解。
 /*
  选取最后一位为主元素，把 小于它的放它左面，大于它的放右面。依次 分治。
  */
-public class Quick extends SpendTime{
+public class Quick extends SpendTime {
 	@Override
 	void handle(int[] a) {
 		quickSort(a,0,a.length-1);

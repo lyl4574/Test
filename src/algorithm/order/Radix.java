@@ -1,6 +1,7 @@
-package algorithm;
+package algorithm.order;
+
 //与桶排序区别，基数排序放进去就排好了序，但需要循环放桶，桶排序 一次性放桶，需要桶内排序。
-public class Radix extends SpendTime{
+public class Radix extends SpendTime {
 
 	@Override
 	void handle(int[] a) {

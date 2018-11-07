@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.order;
 
 public class Util {
 	public static void swap(int[] a,int i, int j){

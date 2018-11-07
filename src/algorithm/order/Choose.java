@@ -1,6 +1,7 @@
-package algorithm;
+package algorithm.order;
+
 //选择排序，每次选择最小的，每次循环只需交换一次
-public class Choose extends SpendTime{
+public class Choose extends SpendTime {
 	private static int size = 0;
 	@Override
 	void handle(int[] a) {

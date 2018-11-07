@@ -1,4 +1,4 @@
-package algorithm;
+package algorithm.order;
 
 public class Insert extends SpendTime {
 

@@ -1,6 +1,6 @@
-package algorithm;
+package algorithm.order;
 
-public class Quick3 extends SpendTime{
+public class Quick3 extends SpendTime {
 
 	@Override
 	void handle(int[] a) {

@@ -1,6 +1,6 @@
-package algorithm;
+package algorithm.order;
 
-public class Bucket extends SpendTime{
+public class Bucket extends SpendTime {
 
 	@Override
 	void handle(int[] a) {
