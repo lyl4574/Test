@@ -2,9 +2,7 @@ package algorithm.cache;
 
 import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Objects;
-import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class FIFO <E extends Map.Entry>{
