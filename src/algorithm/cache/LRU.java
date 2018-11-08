@@ -12,6 +12,10 @@ import java.util.concurrent.LinkedBlockingDeque;
        1.新数据插入到链表头部；
        2.每当缓存命中（即缓存数据被访问），则将数据移到链表头部；(与LRU 的区别，LRU不会将数据移到链表头部)
        3.当链表满的时候，将链表尾部的数据丢弃。
+      命中时需要遍历链表，找到命中的数据块索引，然后需要将数据移到头部。
+
+      LRU-K中的K代表最近使用的次数，因此LRU可以认为是LRU-1。LRU-K的主要目的是为了解决LRU算法“缓存污染”的问题，
+      其核心思想是将“最近使用过1次”的判断标准扩展为“最近使用过K次”。相比LRU，LRU-K需要多维护一个队列。
  */
 public class LRU<E extends Map.Entry>{
     private LinkedBlockingDeque<E> linkedBlockingDeque;
@@ -32,7 +36,7 @@ public class LRU<E extends Map.Entry>{
             linkedBlockingDeque.put(e);
         }
     }
-    public E get(Object k){
+    public E get(Object k) throws InterruptedException {
         Iterator<E> iterator = linkedBlockingDeque.iterator();
         E v = null;
         while(iterator.hasNext()){
@@ -42,6 +46,8 @@ public class LRU<E extends Map.Entry>{
                 break;
             }
         }
+        //每次访问需要放到队尾
+        add(v);
         return v;
     }
     public String printLRU(){
@@ -98,6 +104,7 @@ public class LRU<E extends Map.Entry>{
         }
         lru.add(new LRU.In(97,9999));
         System.out.println(lru.printLRU());
-        System.out.println(lru.get(97).getValue());
+        System.out.println(lru.get(98).getValue());
+        System.out.println(lru.printLRU());
     }
 }
