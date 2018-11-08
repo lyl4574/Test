@@ -3,31 +3,37 @@ package algorithm.cache;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Objects;
-import java.util.concurrent.LinkedBlockingQueue;
-/*
-先进先出,直接使用LinkedBlockingQueue
- */
-public class FIFO <E extends Map.Entry>{
+import java.util.concurrent.LinkedBlockingDeque;
 
-    private LinkedBlockingQueue<E> linkedBlockingQueue;
+/*
+     LRU(Least Recently Used ),最近最少使用，总是淘汰最后访问时间最久的元素。
+       这种算法存在着问题：可能由于一次冷数据的批量查询而误淘汰大量热点的数据。
+
+       1.新数据插入到链表头部；
+       2.每当缓存命中（即缓存数据被访问），则将数据移到链表头部；(与LRU 的区别，LRU不会将数据移到链表头部)
+       3.当链表满的时候，将链表尾部的数据丢弃。
+ */
+public class LRU<E extends Map.Entry>{
+    private LinkedBlockingDeque<E> linkedBlockingDeque;
     private int capacity;
-    public FIFO(int capacity){
+    public LRU(int capacity){
         this.capacity = capacity;
-        linkedBlockingQueue = new LinkedBlockingQueue(capacity);
+        linkedBlockingDeque = new LinkedBlockingDeque(capacity);
     }
     public void add(E e) throws InterruptedException {
-        if(linkedBlockingQueue.contains(e)){
+        if(linkedBlockingDeque.contains(e)){
             System.out.println("key " + e.getKey()+" has exist");
-            return;
+            linkedBlockingDeque.remove(e);
+            linkedBlockingDeque.put(e);
         }else {
-            if(linkedBlockingQueue.size()== capacity){
-                linkedBlockingQueue.take();
+            if(linkedBlockingDeque.size()== capacity){
+                linkedBlockingDeque.take();
             }
-            linkedBlockingQueue.put(e);
+            linkedBlockingDeque.put(e);
         }
     }
     public E get(Object k){
-        Iterator<E> iterator = linkedBlockingQueue.iterator();
+        Iterator<E> iterator = linkedBlockingDeque.iterator();
         E v = null;
         while(iterator.hasNext()){
             E e = iterator.next();
@@ -38,8 +44,8 @@ public class FIFO <E extends Map.Entry>{
         }
         return v;
     }
-    public String printFiFO(){
-        return linkedBlockingQueue.toString();
+    public String printLRU(){
+        return linkedBlockingDeque.toString();
     }
 
     static class In<K,V> implements Map.Entry<K,V>{
@@ -73,7 +79,7 @@ public class FIFO <E extends Map.Entry>{
         public boolean equals(Object o) {
             if (this == o) return true;
             if (o == null || getClass() != o.getClass()) return false;
-            In<?, ?> in = (In<?, ?>) o;
+            LRU.In<?, ?> in = (LRU.In<?, ?>) o;
             return Objects.equals(k, in.k);
         }
 
@@ -85,15 +91,13 @@ public class FIFO <E extends Map.Entry>{
 
     public static void main(String[] args) throws InterruptedException {
 
-        FIFO<In> fifo = new FIFO(5);
+        LRU<LRU.In> lru = new LRU(5);
         for(int i=0;i<100;i++){
-            In<Integer,Integer> in = new In(i,i*i);
-            fifo.add(in);
+            LRU.In<Integer,Integer> in = new LRU.In(i,i*i);
+            lru.add(in);
         }
-        fifo.add(new In(97,9999));
-        System.out.println(fifo.printFiFO());
-        System.out.println(fifo.get(97).getValue());
+        lru.add(new LRU.In(97,9999));
+        System.out.println(lru.printLRU());
+        System.out.println(lru.get(97).getValue());
     }
-
 }
-
