@@ -1,7 +1,5 @@
 package ThreadLocalTest;
 
-import lombok.Data;
-
 public class SessionHandler {
 //  @Data
   public static class Session {
