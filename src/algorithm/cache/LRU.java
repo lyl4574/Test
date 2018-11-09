@@ -16,6 +16,8 @@ import java.util.concurrent.LinkedBlockingDeque;
 
       LRU-K中的K代表最近使用的次数，因此LRU可以认为是LRU-1。LRU-K的主要目的是为了解决LRU算法“缓存污染”的问题，
       其核心思想是将“最近使用过1次”的判断标准扩展为“最近使用过K次”。相比LRU，LRU-K需要多维护一个队列。
+
+      mysql 数据库缓存 采用 midpoint insert strategy,最新的数据页并不是直接放入到LRU列表的首部，而是放入到LRU列表的 midpoint（3/8）位置
  */
 public class LRU<E extends Map.Entry>{
     private LinkedBlockingDeque<E> linkedBlockingDeque;

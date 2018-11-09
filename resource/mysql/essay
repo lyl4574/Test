@@ -1,0 +1,34 @@
+show engine innodb status\G;
+---------
+SEMAPHORES
+-----------
+OS WAIT的信息，reservation count表示Innodb产生了多少次OS WAIT, signal count表示，进行OS WAIT的线程，接收到多少次信号（singal）被唤醒。
+有必要明白什么是OS Wait,什么是spin wait？
+
+首先你要明白Innodb如何处理互斥量(Mutexes)，以及什么是两步获得锁(two-step approach)。
+首先进程，试图获得一个锁，如果此锁被它人占用。它就会执行所谓的spin wait,即所谓循环的查询”锁被释放了吗？”。
+如果在循环过程中，一直未得到锁释放的信息，则其转入OS WAIT，即所谓线程进入挂起(suspended)状态。直到锁被释放后，通过信号(singal)唤醒线程。
+
+Mutex spin :waits 是线程无法获取锁，而进入的spin wait
+rounds :是spin wait进行轮询检查Mutextes的次数
+OS waits :是线程放弃spin-wait进入挂起状态
+
+Spin wait的消耗远小于OS waits。Spinwait利用cpu的空闲时间，检查锁的状态，OS Wait会有所谓content switch，从CPU内核中换出当前执行线程以供其它线程使用。
+可以通过innodb_sync_spin_loops参数来平衡spin wait和os wait。(默认30次)
+
+RW-shared表示共享锁，RW-excl表示排它锁
+
+什么是purge操作？
+多版本控制，即MVCC(multi-version concurrency control)。Innodb为了实现MVCC，需要在表空间内保存老版本的记录信息，这些信息存储于回滚段中（rollback segment），
+所谓回滚段，在物理存储上是UNDO log的记录。
+
+Purge到底做了些什么？其实它就相当于一个垃圾收集器。取个例子，当用户下一个命令，如 “DELETE FROM t WHERE c = 1;”, InnoDB 不会马上删除对应的记录，它会做如下三件事情:
+1.它标记此记录为删除（通过删除标记位）
+2.存储原始的记录到UNDO log
+3.更新记录列DB_TRX_ID和DB_ROLL_PTR（这些列是Innodb在原记录列上增加的）。
+DB_TRX_ID记录了最后操作记录的事务ID。DB_ROLL_PTR也叫回滚指针(rollback pointer)，指向UNDO log 记录，此UNDO Log记录了原始记录的信息，
+这些信息可以用来重建原始记录（如发生了rollback的情况）。如果操作是插入，还会有一个DB_ROW_ID，这个指明了新记录的行号.
+
+当事务提交后，那些标记了删除的记录，以及UNDOLog中的记录并不会马上清除，这些记录信息可以被其它事务所重用，或是共享。
+只有当没有任何事务共享这些记录的时候，这些记录才会被清除（purge）。这就是所谓purge操作。
+而为了提高数据库的操作效率，purge操作是由另外的线程异步完成。这就是为何前面你所看到的为何存在unpurged的事务的原因。
