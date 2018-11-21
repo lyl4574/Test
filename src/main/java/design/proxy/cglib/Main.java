@@ -19,6 +19,12 @@ AOP（AspectOrientedProgramming）：
 在Spring的AOP编程中:
 如果加入容器的目标对象有实现接口,用JDK代理
 如果目标对象没有实现接口,用Cglib代理**
+
+装饰器模式：能动态的新增或组合对象的行为
+在不改变接口的前提下，动态扩展对象的功能
+
+代理模式：为其他对象提供一种代理以控制对这个对象的访问
+在不改变接口的前提下，控制对象的访问
  */
 public class Main {
     public static void main(String[] args) {

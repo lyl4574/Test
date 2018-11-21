@@ -11,7 +11,7 @@ public class StaticTest {
         System.out.println(StaticTest.a);
 
 //        a.ct = new ClassTest();
-        a.ct.setB(1);
+        a.ct.setB(2);
         System.out.println(a.ct.getB());
         System.out.println(b.ct.getB());
         System.out.println(StaticTest.ct.getB());
