@@ -13,6 +13,7 @@ public class ConditionTest {
       try {
         System.out.println(new Date() + "\tThread 1 is waiting");
         try {
+          //await()操作实际上就是释放锁，然后挂起线程，一旦条件满足就被唤醒，再次获取锁！
           long waitTime = condition.awaitNanos(TimeUnit.SECONDS.toNanos(2));
           System.out.println(new Date() + "\tThread 1 remaining time " + waitTime);
         } catch (Exception ex) {
