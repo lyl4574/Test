@@ -17,7 +17,7 @@ public class Merge extends SpendTime {
 			mergeSort(a,middle+1,last);
 			merge(a,first,middle+1,last);
 		}
-		
+
 	}
 	private static void merge(int[] a, int first, int middle, int last) {
 		if(first<last){
@@ -59,6 +59,30 @@ public class Merge extends SpendTime {
 		}
 	}
 
+	int[] MergeList(int a[],int b[])
+	{
+		int lena = a.length;
+		int lenb = b.length;
+		int[] result = new int[lena+lenb];
+
+
+		int i=0,j=0,k=0;   //i:用于标示a数组    j：用来标示b数组  k：用来标示传入的数组
+
+		while(i<lena && j<lenb)
+			if(a[i] <= b[j]) {
+				result[k++] = a[i++];
+			}else{
+				result[k++] = b[j++];
+			}
+
+		/* 后面连个while循环是用来保证两个数组比较完之后剩下的一个数组里的元素能顺利传入 */
+		while(i < lena)
+			result[k++] = a[i++];
+		while(j < lenb)
+			result[k++] = b[j++];
+
+		return result;
+	}
 	//使用了插入算法排序两个有序数组，a[first,middle-1], a[middle,last],性能差。
 	public  static void  mergeInsert(int[]a,int first ,int middle, int last){
 		
