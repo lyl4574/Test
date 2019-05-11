@@ -14,7 +14,7 @@ package design.listener;
 	    
 	    //在事件源中定义两个方法
 	    public void Eat() {
-	        
+			System.out.println("吃饭");
 	        //当事件源调用了Eat方法时，应该触发监听器的方法，调用监听器的方法并把事件对象传递进去
 	        personListener.doEat(new Event(this));
 	    }
@@ -22,6 +22,7 @@ package design.listener;
 	    public void sleep() {
 	
 	        //当事件源调用了Eat方法时，应该触发监听器的方法，调用监听器的方法并把事件对象传递进去
+			System.out.println("睡觉觉");
 	        personListener.doSleep(new Event(this));
 	    }
 	
