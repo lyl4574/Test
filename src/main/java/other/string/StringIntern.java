@@ -1,4 +1,4 @@
-package other;
+package other.string;
 /**
  * 直接使用双引号声明出来的String对象会直接存储在常量池中(hash table 结构)。
  * String str = new String("a");是生成了两个变量，一个在heap，一个在常量池。str 引用的是heap 中地址。

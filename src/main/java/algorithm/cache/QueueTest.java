@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-/*add ,remove ,element 会抛出异常，offer，poll，peek 不会。
+/*add ,remove ,element 会抛出异常，offer，poll，peek 不会,返回boolean。
 
         LinkedBlockingQueue
 add(e) remove() element() 方法不会阻塞线程。当不满足约束条件时，会抛出IllegalStateException 异常。例如：当队列被元素填满后，再调用add(e)，则会抛出异常。

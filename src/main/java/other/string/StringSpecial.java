@@ -1,4 +1,4 @@
-package other;
+package other.string;
 
 /**
  * 连接表达式 +
