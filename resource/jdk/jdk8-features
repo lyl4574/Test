@@ -1,3 +1,5 @@
+原文链接：https://www.javacodegeeks.com/2014/05/java-8-features-tutorial.html
+一、java language
 1、lambda表达式
 Arrays.asList( "a", "b", "d" ).forEach( e -> System.out.println( e ) );
 
@@ -29,4 +31,48 @@ public interface Function<T, R> {
 }
 
 
-3、
+3、method reference
+4、repeating annotations ，example:filter  @Repeatable(RabbitListeners.class) @Repeatable(Schedules.class)
+5、extended annotations Support target 属性 ElementType 扩展。
+
+二、java compiler
+javac -parameters
+
+三、java libraries
+1、 optional  process nullPointerException
+2、 streams
+3、localDate
+4、Nashorn JavaScript engine
+ScriptEngineManager manager = new ScriptEngineManager();
+ScriptEngine engine = manager.getEngineByName( "JavaScript" );
+
+System.out.println( engine.getClass().getName() );
+System.out.println( "Result:" + engine.eval( "function f() { return 1; }; f() + 1;" ) );
+
+5、BASE64
+6、Parallel Arrays
+7、Concurrency
+New methods have been added to the java.util.concurrent.ConcurrentHashMap class to support aggregate operations based
+on the newly added streams facility and lambda expressions. Also, new methods have been added to the
+java.util.concurrent.ForkJoinPool class to support a common pool (check also our free course on Java concurrency).
+
+The new java.util.concurrent.locks.StampedLock class has been added to provide a capability-based lock
+with three modes for controlling read/write access (it might be considered as better alternative for infamous
+java.util.concurrent.locks.ReadWriteLock).
+
+New classes have been added to the java.util.concurrent.atomic package:
+DoubleAccumulator
+DoubleAdder
+LongAccumulator
+LongAdde
+
+四、java tools
+Class dependency analyzer: jdeps
+
+五、java runtime（jvm）
+The PermGen space is gone and has been replaced with Metaspace (JEP 122). The JVM options -XX:PermSize
+and –XX:MaxPermSize have been replaced by -XX:MetaSpaceSize and -XX:MaxMetaspaceSize respectively.
+
+7、
+
+
