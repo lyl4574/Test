@@ -1,4 +1,4 @@
-package design.single;
+package design.create.single;
 /*
 JDK 版本：JDK1.5 起
 是否 Lazy 初始化：是

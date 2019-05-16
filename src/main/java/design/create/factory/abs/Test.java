@@ -1,4 +1,4 @@
-package design.factory.abs;
+package design.create.factory.abs;
 
 public class Test {
     public static void main(String[] args) {

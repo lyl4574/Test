@@ -1,4 +1,4 @@
-package design.single;
+package design.create.single;
 /*
 DK 版本：JDK1.5 起
 

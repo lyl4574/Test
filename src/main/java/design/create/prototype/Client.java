@@ -1,4 +1,4 @@
-package design.prototype;
+package design.create.prototype;
 
 import java.util.ArrayList;
 /*
@@ -26,7 +26,7 @@ import java.util.ArrayList;
 
 	PS:深拷贝与浅拷贝问题中，会发生深拷贝的有java中的8中基本类型以及他们的封装类型，另外还有String类型。其余的都是浅拷贝
  */
-class Prototype implements Cloneable {
+ class Prototype implements Cloneable {
 	private ArrayList list = new ArrayList();
 	public Prototype clone(){
 		Prototype prototype = null;

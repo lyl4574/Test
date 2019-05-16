@@ -1,4 +1,4 @@
-package design.factory.simple;
+package design.create.factory.simple;
 
 public class CarFactory {
     String color;
@@ -18,5 +18,6 @@ public class CarFactory {
     public static void main(String[] args) {
         new CarFactory("red").createCar();
         new CarFactory("blue").createCar();
+        System.out.println((new RedCar().equals(new RedCar())));
     }
 }

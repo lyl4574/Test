@@ -1,4 +1,4 @@
-package design.factory.abs;
+package design.create.factory.abs;
 
 public class HpFactory extends MachineFactory {
     @Override

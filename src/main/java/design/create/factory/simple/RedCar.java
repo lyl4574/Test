@@ -1,4 +1,4 @@
-package design.factory.simple;
+package design.create.factory.simple;
 
 public class RedCar implements Car{
     public RedCar(){

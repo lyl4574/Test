@@ -1,4 +1,4 @@
-package design.single;
+package design.create.single;
 /*
 饿汉式
 是否 Lazy 初始化：否

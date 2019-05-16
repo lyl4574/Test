@@ -1,5 +1,5 @@
 1、创建型：工厂模式，
-          抽象工厂模式。
+          抽象工厂模式。（BeanFactory）
           单例模式(sun.misc.Launcher.ExtClassLoader)。
           建造者模式（BeanDefinitionBuilder）,
           原型模式。

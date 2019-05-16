@@ -1,6 +1,4 @@
-package design.factory.abs;
-
-import java.awt.*;
+package design.create.factory.abs;
 
 public abstract class MachineFactory {
     abstract Mouse createMouse();

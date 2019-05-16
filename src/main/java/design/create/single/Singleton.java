@@ -1,4 +1,4 @@
-package design.single;
+package design.create.single;
 /*
 懒汉式，线程安全
 是否 Lazy 初始化：是
