@@ -10,7 +10,9 @@ public class MyInvocationHandler implements InvocationHandler {
     }
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        System.out.println("fdfsd");
         method.invoke(target, args);
+        System.out.println("fdfsd1");
         return null;
     }
 }
