@@ -1,5 +1,15 @@
-1、创建型：工厂模式，
+1、创建型 5个：工厂模式，
           抽象工厂模式。（BeanFactory）
           单例模式(sun.misc.Launcher.ExtClassLoader)。
           建造者模式（BeanDefinitionBuilder）,
           原型模式。
+2、结构型 8个：适配器模式。
+           桥接模式。
+           面板模式。
+           组合模式。
+           装饰器模式。
+           过滤器模式（servlet dispatcher）。
+           代理模式(aop)。
+           享元模式。
+
+
