@@ -1,4 +1,4 @@
-package design.memento;
+package design.behavioral.memento;
 
 public class Originator {
    private String state;

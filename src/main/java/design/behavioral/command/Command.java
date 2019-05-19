@@ -1,4 +1,4 @@
-package design.command;
+package design.behavioral.command;
 
 public interface Command {
     void execute();

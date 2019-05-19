@@ -1,4 +1,4 @@
-package design.state;
+package design.behavioral.state;
 /*状态模式要点
         (1)客户不会和状态进行交互,全盘了解状态是 context的工作
         (2)在状态模式中，每个状态通过持有Context的引用，来实现状态转移

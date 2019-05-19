@@ -1,4 +1,4 @@
-package design.command;
+package design.behavioral.command;
 
 public class OffCommand implements Command {
     private Tv tv;

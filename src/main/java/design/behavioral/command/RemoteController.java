@@ -1,7 +1,4 @@
-package design.command;
-
-import java.util.ArrayList;
-import java.util.List;
+package design.behavioral.command;
 
 public class RemoteController{
 

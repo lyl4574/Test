@@ -1,4 +1,4 @@
-package design.state;
+package design.behavioral.state;
 
 public class StartState implements State {
 

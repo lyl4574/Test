@@ -1,4 +1,4 @@
-package design.observer.advanced;
+package design.behavioral.observer.advanced;
 
 public class Main {
     public static void main(String[] args) {

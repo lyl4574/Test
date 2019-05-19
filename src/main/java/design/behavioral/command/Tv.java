@@ -1,4 +1,4 @@
-package design.command;
+package design.behavioral.command;
 
 public class Tv {
     public void open(){

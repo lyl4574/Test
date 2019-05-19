@@ -1,4 +1,5 @@
-package design.command;
+package design.behavioral.command;
+
 /*
  命令模式 将"行为请求者"与"行为实现者"解耦
  */

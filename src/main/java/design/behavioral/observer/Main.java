@@ -1,4 +1,4 @@
-package design.observer;
+package design.behavioral.observer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,7 @@ import java.util.List;
 interface Observer {
     void update(String state);
 }
+
 //具体观察者角色类
 class ProgramMonkeyObserver implements Observer {
     @Override
@@ -14,6 +15,7 @@ class ProgramMonkeyObserver implements Observer {
         System.out.println("Programer look the SDK download process is: "+state);
     }
 }
+
 //抽象主题角色类
 abstract class Subject {
     private List<Observer> list = new ArrayList<>();
@@ -32,12 +34,14 @@ abstract class Subject {
         }
     }
 }
+
 //具体主题角色类
 class SDKDownloadSubject extends Subject {
     public void netProcessChange(String data) {
         this.motifyObservers(data);
     }
 }
+
 //客户端
 public class Main {
     public static void main(String[] args) {

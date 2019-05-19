@@ -1,8 +1,8 @@
-package design.memento;
+package design.behavioral.memento;
 
 import java.util.ArrayList;
 import java.util.List;
- 
+
 public class CareTaker {
    private List<Memento> mementoList = new ArrayList<Memento>();
  

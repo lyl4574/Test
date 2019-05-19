@@ -1,4 +1,4 @@
-package design.strategy;
+package design.behavioral.strategy;
 
 public class Context {
    private Strategy strategy;

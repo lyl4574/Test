@@ -1,4 +1,4 @@
-package design.observer.advanced;
+package design.behavioral.observer.advanced;
 
 import java.util.Observable;
 import java.util.Observer;
