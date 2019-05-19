@@ -10,6 +10,6 @@
            装饰器模式。
            过滤器模式（servlet dispatcher）。
            代理模式(aop)。
-           享元模式。
+           享元模式(String)。
 
 
