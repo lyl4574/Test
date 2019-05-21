@@ -18,4 +18,7 @@ package synchronizedTest;
         sleep 不会释放锁
     */
 public class SynchronizedTest {
+        public static void main(String[] args) {
+            Thread.currentThread().getContextClassLoader();
+        }
 }
