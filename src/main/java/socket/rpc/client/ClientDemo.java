@@ -1,7 +1,6 @@
-package rpc.client;
+package socket.rpc.client;
 
-import other.reference.Test;
-import rpc.common.MobilePrice;
+import socket.rpc.common.MobilePrice;
 
 import java.net.InetSocketAddress;
 

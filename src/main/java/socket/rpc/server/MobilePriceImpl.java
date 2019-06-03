@@ -1,6 +1,6 @@
-package rpc.server;
+package socket.rpc.server;
 
-import rpc.common.MobilePrice;
+import socket.rpc.common.MobilePrice;
 
 public class MobilePriceImpl implements MobilePrice {
     @Override
