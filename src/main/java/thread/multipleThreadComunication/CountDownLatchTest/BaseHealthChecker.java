@@ -1,4 +1,4 @@
-package multipleThreadComunication.CountDownLatchTest;
+package thread.multipleThreadComunication.CountDownLatchTest;
 
 import java.util.concurrent.CountDownLatch;
 

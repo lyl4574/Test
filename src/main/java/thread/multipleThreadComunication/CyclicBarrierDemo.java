@@ -1,6 +1,7 @@
-package multipleThreadComunication;
+package thread.multipleThreadComunication;
 import java.util.Date;
 import java.util.concurrent.CyclicBarrier;
+
 /*
 CyclicBarrier可以在构造时指定需要在屏障前执行await的个数，
 所有对await的调用都会等待，直到调用await的次数达到预定指，所有等待都会立即被唤醒。

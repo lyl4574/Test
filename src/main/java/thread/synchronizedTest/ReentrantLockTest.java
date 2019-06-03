@@ -1,4 +1,4 @@
-package synchronizedTest;
+package thread.synchronizedTest;
 
 import java.util.concurrent.locks.ReentrantLock;
 

@@ -1,4 +1,4 @@
-package volatileTest;
+package thread.volatileTest;
 
 /*
 线程安全: 在多线程中使用时,不用自已做同步处理.   

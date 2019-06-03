@@ -1,4 +1,4 @@
-package synchronizedTest;
+package thread.synchronizedTest;
     /**
      * synchronized几种用法
      *         每个Java对象都可以用做一个实现同步的互斥锁，这些锁被称为内置锁。线程进入同步代码块或方法时自动获得内置锁，

@@ -1,4 +1,4 @@
-package ThreadLocalTest;
+package thread.ThreadLocalTest;
 
 public class SessionHandlerTest {
     public static ThreadLocal<Session> session = new ThreadLocal<Session>();

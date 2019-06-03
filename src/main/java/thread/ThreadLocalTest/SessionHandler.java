@@ -1,4 +1,4 @@
-package ThreadLocalTest;
+package thread.ThreadLocalTest;
 
 public class SessionHandler {
 //  @Data

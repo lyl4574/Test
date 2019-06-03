@@ -1,7 +1,8 @@
-package multipleThreadComunication;
+package thread.multipleThreadComunication;
 
 import java.io.IOException;
 import java.util.concurrent.Phaser;
+
 /*
 多个线程必须等到其它线程的同一阶段的任务全部完成才能进行到下一个阶段，并且每当完成某一阶段任务时，Phaser都会执行其onAdvance方法。
  */

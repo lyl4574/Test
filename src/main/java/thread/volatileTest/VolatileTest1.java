@@ -1,4 +1,4 @@
-package volatileTest;
+package thread.volatileTest;
 
 public class VolatileTest1 {
     private  volatile boolean isRunning = true;

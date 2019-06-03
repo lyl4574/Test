@@ -1,4 +1,4 @@
-package synchronizedTest;
+package thread.synchronizedTest;
 
 public class Wait1 {
     private  Object a = new Object();

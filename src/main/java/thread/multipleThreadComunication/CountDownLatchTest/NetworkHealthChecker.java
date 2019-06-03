@@ -1,11 +1,11 @@
-package multipleThreadComunication.CountDownLatchTest;
+package thread.multipleThreadComunication.CountDownLatchTest;
 
 import java.util.concurrent.CountDownLatch;
 
-public class CacheHealthChecker extends BaseHealthChecker
+public class NetworkHealthChecker extends BaseHealthChecker
 {
-    public CacheHealthChecker(CountDownLatch latch)  {
-        super("Cache Service", latch);
+    public NetworkHealthChecker (CountDownLatch latch)  {
+        super("Network Service", latch);
     }
  
     @Override
@@ -14,7 +14,7 @@ public class CacheHealthChecker extends BaseHealthChecker
         System.out.println("Checking " + this.getServiceName());
         try
         {
-            Thread.sleep(1000);
+            Thread.sleep(5000);
         }
         catch (InterruptedException e)
         {

@@ -1,4 +1,4 @@
-package synchronizedTest;
+package thread.synchronizedTest;
 import java.util.Date;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReadWriteLock;

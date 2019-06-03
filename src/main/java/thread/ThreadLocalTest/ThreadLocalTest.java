@@ -1,4 +1,4 @@
-package ThreadLocalTest;
+package thread.ThreadLocalTest;
 
 import java.util.concurrent.CountDownLatch;
 
