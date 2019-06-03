@@ -1,4 +1,4 @@
-package hashmap;
+package other.hashmap;
 /*
 HashMap是非线程安全的,HashMap的线程不安全主要体现在多线程resize时的死循环及使用迭代器时的fast-fail上。(????)
 散列表的载荷因子定义为： a = 填入表中的元素个数 / 散列表的长度

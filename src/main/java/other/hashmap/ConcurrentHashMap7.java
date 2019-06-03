@@ -1,4 +1,4 @@
-///*
+package other.hashmap;///*
 // * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
 // * jdk 7版本
 // *java 7中的ConcurrentHashMap的底层数据结构仍然是数组和链表。与HashMap不同的是，ConcurrentHashMap最外层不是一个大的数组，

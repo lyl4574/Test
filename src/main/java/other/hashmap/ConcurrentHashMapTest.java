@@ -1,4 +1,4 @@
-package hashmap;
+package other.hashmap;
 
 /**
  * ConcurrentHashMap线程安全，而HashMap非线程安全

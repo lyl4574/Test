@@ -1,6 +1,6 @@
-package ExecuteOrder;
+package other.ExecuteOrder;
 
-public class ClassB extends ClassA{
+public class ClassB extends ClassA {
     
     
     static{
