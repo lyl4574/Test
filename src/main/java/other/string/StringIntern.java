@@ -39,9 +39,8 @@ public class StringIntern {
 
 
         String s3 = new String("1") + new String("1");
-//        s3.intern();
-        String s4 = "11";
         s3.intern();
+        String s4 = "11";
         System.out.println(s3 == s4);
     }
 }
