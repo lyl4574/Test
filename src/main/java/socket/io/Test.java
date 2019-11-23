@@ -2,6 +2,11 @@ package socket.io;
 
 import java.io.*;
 
+/**
+ * 读取字节：继续 inputStream；读取字符继承Reader。
+ * 字节流转字符流 new inputStreamReader 及其子类。
+ * 如：new BufferedReader(new FileReader(new inputStream()))。
+ */
 public class Test {
     public static void main(String[] args) throws IOException {
 //        byteReadWrite();
