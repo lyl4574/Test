@@ -29,8 +29,6 @@ public class StringIntern {
     public static void main(String[] args) {
 
         String s = new String("123");
-
-        s.intern();
         String s2 = "123";
         //引用不一样，false
         System.out.println(s == s2);
