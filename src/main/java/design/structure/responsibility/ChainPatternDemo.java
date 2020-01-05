@@ -18,10 +18,10 @@ public class ChainPatternDemo {
  
       loggerChain.logMessage(AbstractLogger.DEBUG, "This is an information.");
  
-//      loggerChain.logMessage(AbstractLogger.DEBUG,
-//         "This is a debug level information.");
-//
-//      loggerChain.logMessage(AbstractLogger.ERROR,
-//         "This is an error information.");
+      loggerChain.logMessage(AbstractLogger.INFO,
+         "This is a info level information.");
+
+      loggerChain.logMessage(AbstractLogger.ERROR,
+         "This is an error information.");
    }
 }

@@ -28,12 +28,10 @@ package other.string;
 public class StringIntern {
     public static void main(String[] args) {
 
-        String s = new String("1");
+        String s = new String("123");
 
         s.intern();
-        String s2 = "1";
-        //查看常量池中存在了"1";
-//        s.intern();
+        String s2 = "123";
         //引用不一样，false
         System.out.println(s == s2);
 
@@ -42,5 +40,13 @@ public class StringIntern {
         s3.intern();
         String s4 = "11";
         System.out.println(s3 == s4);
+
+
+            String str1 = new StringBuilder("计算机").append("软件").toString();
+            System.out.println(str1.intern() == str1);
+
+            String str2 = new StringBuilder("ja").append("va").toString();
+            System.out.println(str2.intern() == str2);
+
     }
 }

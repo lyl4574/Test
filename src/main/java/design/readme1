@@ -11,5 +11,8 @@
            过滤器模式（servlet dispatcher）。
            代理模式(aop)。
            享元模式(String)。
+3、行为型
+    命令模式。
+
 
 

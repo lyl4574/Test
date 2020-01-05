@@ -2,6 +2,7 @@ package design.create.build;
 
 /**
  * 建立复杂对象
+ * demo: BeanDefinitionBuilder  DataSourceBuilder
  */
 public class BeanBuilder {
     private AbstractBean bean;
